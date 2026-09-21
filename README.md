@@ -1,67 +1,35 @@
-# PlastiCore ERP — React + Vite
+# PlastiCore ERP — React/Vite Login-Fixed Demo
 
-A responsive Plastics & Polymers Industry ERP prototype covering Phases 1–20.
+Tech Tarn demo for the PlastiCore ERP plastics & polymers solution.
 
-## Run locally
+## Login
+The demo opens on authentication. Demo credentials are embedded for demonstration only.
 
-```bash
-npm install
-npm run dev
-```
+- admin / admin123 — Super Administrator — full access
+- ceo / ceo123 — CEO / Executive
+- planthead / plant123 — Plant Head
+- prodmanager / prod123 — Production Manager
+- planner / plan123 — Production Planner
+- store / store123 — Store Manager
+- quality / quality123 — Quality Manager
+- maintenance / maint123 — Maintenance Manager
+- sales / sales123 — Sales Executive
+- finance / finance123 — Finance Manager
+- operator / operator123 — Machine Operator
 
-## Production build
+## Important fix
+The previous build went blank immediately after login because the embedded ERP script executed `Object.assign(titles, ...)` before the `titles` constant had been initialized. The assignments are now executed only after `titles` and all phase title maps have been declared.
 
-```bash
-npm run build
-npm run preview
-```
-
-## GitHub
-
-Create a repository and push this project:
-
-```bash
-git init
-git add .
-git commit -m "Initial PlastiCore ERP React prototype"
-git branch -M main
-git remote add origin YOUR_GITHUB_REPOSITORY_URL
-git push -u origin main
-```
+React StrictMode was also removed from the entry point because the compatibility shell mounts a legacy DOM application and registers global event listeners; StrictMode's development effect replay is undesirable for that architecture.
 
 ## Vercel
-
-Import the GitHub repository into Vercel.
-
+Use the repository root with:
 - Framework: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: default
 
-The included `vercel.json` already contains these settings.
+The included `vercel.json` provides the SPA rewrite.
 
-## Architecture
-
-The original validated ERP renderer is mounted inside a React component so all 20 existing
-phases, navigation, responsive behavior and walkthrough interactions are preserved while
-the application is packaged as a standard Vite/React project.
-## Demo authentication
-
-The React demo now opens on a login screen. No ERP panel is mounted until a valid demo session is created.
-Sessions are stored in `sessionStorage` and can be ended with the **Logout** button.
-
-| Role | User ID | Password | Landing panel |
-|---|---|---|---|
-| Super Administrator | `admin` | `admin123` | Executive Dashboard |
-| CEO / Executive | `ceo` | `ceo123` | Executive Dashboard |
-| Plant Head | `planthead` | `plant123` | Plant Control Tower |
-| Production Manager | `prodmanager` | `prod123` | Production Dashboard |
-| Production Planner | `planner` | `plan123` | Planning Dashboard |
-| Store Manager | `store` | `store123` | Inventory Dashboard |
-| Quality Manager | `quality` | `quality123` | Quality Dashboard |
-| Maintenance Manager | `maintenance` | `maint123` | Maintenance Dashboard |
-| Sales Executive | `sales` | `sales123` | CRM Dashboard |
-| Finance Manager | `finance` | `finance123` | Finance Dashboard |
-| Machine Operator | `operator` | `operator123` | Operator Mobile |
-
-The Administrator demo has full prototype access. Other demo users start in their role-specific workspace and receive a role-focused navigation set.
-
+## Demo security
+This is a front-end demo. Credentials are not secure production authentication. A production ERP should use a backend/API, hashed passwords, server-side authorization, and secure sessions/tokens.
