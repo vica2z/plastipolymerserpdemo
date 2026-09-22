@@ -33,3 +33,16 @@ The included `vercel.json` provides the SPA rewrite.
 
 ## Demo security
 This is a front-end demo. Credentials are not secure production authentication. A production ERP should use a backend/API, hashed passwords, server-side authorization, and secure sessions/tokens.
+
+## Final verification performed
+The embedded ERP bundle was executed in a headless Chromium test harness and checked panel-by-panel:
+- 144 navigation panels rendered successfully.
+- 74 navigation targets exposed by inner module/workflow cards rendered successfully.
+- 83 inner module/action buttons were exercised with zero click exceptions.
+- Product Specifications, BOM & Formula Versions, and Quality Parameters table argument bugs were corrected.
+- Guide Tour was reconnected to the React-executed bundle and smoke-tested.
+- Executive/Finance `analytics` role references were corrected to the actual `analyticsHub` panel.
+- Responsive smoke checks passed at 390px, 768px and 1440px for representative dashboards/modules with no detected horizontal page overflow.
+- React TSX syntax was transpile-checked with zero TypeScript compiler diagnostics.
+
+This verification is source/runtime smoke testing of the prototype bundle. It is not a production security audit.
