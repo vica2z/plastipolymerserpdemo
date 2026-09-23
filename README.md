@@ -32,3 +32,5 @@ Output Directory: `dist`
 Root Directory: repository root
 
 This is a prototype/demo authentication layer. Production ERP security should use a backend, hashed passwords, server-side authorization and secure sessions/tokens.
+
+CEO verification note: CEO / Executive access includes Orders because the Executive Dashboard's View Orders action routes to the Orders module.
