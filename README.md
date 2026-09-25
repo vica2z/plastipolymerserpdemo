@@ -1,19 +1,16 @@
-# PlastiCore ERP — Production Planner Verified
+# PlastiCore ERP — Machine Operator Verified React Demo
 
-React/Vite demo build for the Production Planner role.
+Machine Operator role audit and Guide Tour update.
 
-## Demo login
-- User ID: `planner`
-- Password: `plan123`
+**Demo login**
+- User ID: `operator`
+- Password: `operator123`
+- Landing panel: `Operator Mobile`
 
-## Planner workspace
-Planning Dashboard → Demand Planning → MRP → Production Plan → Machine Scheduling, with connected Purchase, Inventory, Production and Control Tower workflows.
+The role includes 15 shop-floor modules: Executive Dashboard, Notifications, My Profile, Operator Mobile, Shop Floor, Injection Molding, Extrusion, Blow Molding, Work Orders, Quality Dashboard, In-Process QC, Scrap & Regrind, Barcode / QR Scanner, Maintenance Mobile, and Offline Mode.
 
-## Guide Tour
-A dedicated Production Planner Guide Tour is included with role-specific steps for planning KPIs, planning work areas, actions, filters, planning records, planning workspace and connected workflows.
+The Operator Mobile screen uses the existing interactive demo action layer for production entry, machine issue, pause/complete actions and routes to Scrap, Process QC, Work Orders, Scanner, Maintenance Mobile and Offline Mode.
 
-## Deployment
-- Framework: Vite
-- Build: `npm run build`
-- Output: `dist`
-- Root: repository root
+Guide Tour: dedicated Machine Operator intro plus 8 role-specific steps.
+
+This is a browser prototype. Authentication and demo records are frontend/session based and are not production security.
